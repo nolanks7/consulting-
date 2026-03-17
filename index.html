@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SocialPro – Book Top Social Media Experts</title>
+  <meta name="description" content="Book 1:1 video calls with the world's top social media strategists, influencers, and growth experts. Get personalized advice to skyrocket your online presence." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="14" fill="url(#logoGrad)"/>
+          <path d="M8 14c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="14" cy="17" r="2.5" fill="#fff"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#7C3AED"/>
+              <stop offset="1" stop-color="#EC4899"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="logo-text">SocialPro</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#how-it-works">How it Works</a>
+        <a href="#categories">Categories</a>
+        <a href="#experts">Experts</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn-ghost" onclick="openModal('loginModal')">Sign In</button>
+        <button class="btn-primary" onclick="openModal('signupModal')">Get Started</button>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+    <div class="container hero-inner">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Over 500 verified social media experts
+      </div>
+      <h1 class="hero-title">
+        Book the world's top<br/>
+        <span class="gradient-text">social media experts</span><br/>
+        for a 1:1 video call
+      </h1>
+      <p class="hero-subtitle">
+        Get personalized advice from verified creators, strategists, and growth hackers
+        who've built audiences of millions. 15-minute calls start at $25.
+      </p>
+
+      <div class="hero-search-bar">
+        <svg class="search-icon" width="20" height="20" fill="none" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8" stroke="#94a3b8" stroke-width="2"/>
+          <path d="m21 21-4.35-4.35" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <input type="text" id="heroSearch" placeholder="Search by platform, niche, or name…" />
+        <button class="btn-primary search-btn" onclick="handleSearch()">Search</button>
+      </div>
+
+      <div class="hero-tags">
+        <span class="tag" onclick="filterByTag('Instagram')">📸 Instagram</span>
+        <span class="tag" onclick="filterByTag('TikTok')">🎵 TikTok</span>
+        <span class="tag" onclick="filterByTag('YouTube')">▶️ YouTube</span>
+        <span class="tag" onclick="filterByTag('LinkedIn')">💼 LinkedIn</span>
+        <span class="tag" onclick="filterByTag('Twitter')">🐦 Twitter/X</span>
+        <span class="tag" onclick="filterByTag('Monetization')">💰 Monetization</span>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <strong>10,000+</strong>
+          <span>calls booked</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <strong>500+</strong>
+          <span>verified experts</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <strong>4.9 ★</strong>
+          <span>average rating</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-floating-cards">
+      <div class="floating-card card-1">
+        <img src="https://i.pravatar.cc/48?img=1" alt="Expert" class="fc-avatar"/>
+        <div>
+          <div class="fc-name">Alex Chen</div>
+          <div class="fc-meta">🎵 TikTok • 4.2M followers</div>
+        </div>
+        <div class="fc-price">$45/15min</div>
+      </div>
+      <div class="floating-card card-2">
+        <div class="fc-rating">⭐ 5.0</div>
+        <div class="fc-review">"Grew my account 10x in 30 days!"</div>
+      </div>
+      <div class="floating-card card-3">
+        <div class="fc-live">
+          <span class="live-dot"></span> Live Call
+        </div>
+        <img src="https://i.pravatar.cc/48?img=5" alt="Expert" class="fc-avatar"/>
+        <div class="fc-name">Sarah K.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED IN ===== -->
+  <section class="featured-in">
+    <div class="container">
+      <p class="featured-label">Our experts have been featured in</p>
+      <div class="featured-logos">
+        <span class="featured-logo">Forbes</span>
+        <span class="featured-logo">TechCrunch</span>
+        <span class="featured-logo">Wired</span>
+        <span class="featured-logo">Business Insider</span>
+        <span class="featured-logo">Fast Company</span>
+        <span class="featured-logo">Inc.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Simple Process</div>
+        <h2 class="section-title">How SocialPro works</h2>
+        <p class="section-subtitle">Get expert advice in three easy steps</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <div class="step-icon">🔍</div>
+          <h3>Find Your Expert</h3>
+          <p>Browse hundreds of vetted social media pros. Filter by platform, niche, follower count, or price. Read verified reviews.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <div class="step-icon">📅</div>
+          <h3>Book a Time Slot</h3>
+          <p>Choose a 15, 30, or 60-minute session from the expert's real-time availability calendar. Pay securely upfront.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <div class="step-icon">🎥</div>
+          <h3>Join Your Video Call</h3>
+          <p>Connect directly via our built-in video platform. Get personalized, actionable advice and leave with a clear game plan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORIES ===== -->
+  <section class="section categories-section" id="categories">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Browse by Category</div>
+        <h2 class="section-title">Find expertise in any platform</h2>
+        <p class="section-subtitle">Whatever your social media goals, we have the right expert for you</p>
+      </div>
+
+      <div class="categories-grid">
+        <div class="category-card cat-instagram" onclick="filterByTag('Instagram')">
+          <div class="cat-icon">📸</div>
+          <h3>Instagram</h3>
+          <p>Reels, stories, growth hacks, brand deals</p>
+          <div class="cat-count">142 experts</div>
+        </div>
+        <div class="category-card cat-tiktok" onclick="filterByTag('TikTok')">
+          <div class="cat-icon">🎵</div>
+          <h3>TikTok</h3>
+          <p>Viral content, algorithm secrets, monetization</p>
+          <div class="cat-count">98 experts</div>
+        </div>
+        <div class="category-card cat-youtube" onclick="filterByTag('YouTube')">
+          <div class="cat-icon">▶️</div>
+          <h3>YouTube</h3>
+          <p>SEO, thumbnails, audience retention, AdSense</p>
+          <div class="cat-count">87 experts</div>
+        </div>
+        <div class="category-card cat-linkedin" onclick="filterByTag('LinkedIn')">
+          <div class="cat-icon">💼</div>
+          <h3>LinkedIn</h3>
+          <p>Personal branding, B2B growth, thought leadership</p>
+          <div class="cat-count">74 experts</div>
+        </div>
+        <div class="category-card cat-twitter" onclick="filterByTag('Twitter')">
+          <div class="cat-icon">🐦</div>
+          <h3>Twitter/X</h3>
+          <p>Thread strategy, follower growth, monetization</p>
+          <div class="cat-count">63 experts</div>
+        </div>
+        <div class="category-card cat-monetize" onclick="filterByTag('Monetization')">
+          <div class="cat-icon">💰</div>
+          <h3>Monetization</h3>
+          <p>Brand deals, sponsorships, creator economy</p>
+          <div class="cat-count">55 experts</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== EXPERTS ===== -->
+  <section class="section experts-section" id="experts">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Top Experts</div>
+        <h2 class="section-title">Meet our featured experts</h2>
+        <p class="section-subtitle">Verified professionals ready to help you grow</p>
+      </div>
+
+      <div class="filters-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Instagram">Instagram</button>
+        <button class="filter-btn" data-filter="TikTok">TikTok</button>
+        <button class="filter-btn" data-filter="YouTube">YouTube</button>
+        <button class="filter-btn" data-filter="LinkedIn">LinkedIn</button>
+        <button class="filter-btn" data-filter="Monetization">Monetization</button>
+      </div>
+
+      <div class="experts-grid" id="expertsGrid">
+        <!-- Populated by JS -->
+      </div>
+
+      <div class="load-more-wrap">
+        <button class="btn-outline" onclick="loadMoreExperts()">Load More Experts</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Success Stories</div>
+        <h2 class="section-title">Results our users are getting</h2>
+        <p class="section-subtitle">Real growth from real 1:1 sessions</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card featured-testimonial">
+          <div class="quote-mark">"</div>
+          <p class="testimonial-text">One 30-minute call with a TikTok expert completely changed my content strategy. I went from 2,000 to 180,000 followers in six weeks. The ROI was unbelievable.</p>
+          <div class="testimonial-author">
+            <img src="https://i.pravatar.cc/48?img=10" alt="User" />
+            <div>
+              <strong>Marcus T.</strong>
+              <span>Fitness Creator • 180K followers</span>
+            </div>
+          </div>
+          <div class="testimonial-result">
+            <span class="result-badge">+8,900% growth</span>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">My Instagram Reels were getting zero views. After booking a session, I learned exactly how the algorithm works and my last three Reels hit 500K+ each.</p>
+          <div class="testimonial-author">
+            <img src="https://i.pravatar.cc/48?img=20" alt="User" />
+            <div>
+              <strong>Priya S.</strong>
+              <span>Food & Lifestyle Creator</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">As a B2B founder, I had no idea how to use LinkedIn. After two sessions, my posts regularly get 50K impressions and I've closed 3 enterprise deals directly from LinkedIn.</p>
+          <div class="testimonial-author">
+            <img src="https://i.pravatar.cc/48?img=30" alt="User" />
+            <div>
+              <strong>James W.</strong>
+              <span>SaaS Founder</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p class="testimonial-text">Worth every penny. My YouTube channel was stuck at 500 subs for two years. The thumbnail and title audit alone doubled my CTR and I hit 10K subs in 3 months.</p>
+          <div class="testimonial-author">
+            <img src="https://i.pravatar.cc/48?img=40" alt="User" />
+            <div>
+              <strong>Emma R.</strong>
+              <span>Tech YouTuber • 42K subscribers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="section pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag">Transparent Pricing</div>
+        <h2 class="section-title">Flexible session lengths</h2>
+        <p class="section-subtitle">Experts set their own rates. Here's what you can expect.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <div class="pricing-duration">15 min</div>
+          <div class="pricing-range">$25 – $75</div>
+          <div class="pricing-label">Quick Q&A</div>
+          <ul class="pricing-features">
+            <li>✓ One focused topic</li>
+            <li>✓ Rapid-fire advice</li>
+            <li>✓ Session recording</li>
+            <li>✓ Follow-up chat</li>
+          </ul>
+          <button class="btn-primary" onclick="scrollToExperts()">Browse Experts</button>
+        </div>
+
+        <div class="pricing-card pricing-featured">
+          <div class="pricing-badge">Most Popular</div>
+          <div class="pricing-duration">30 min</div>
+          <div class="pricing-range">$50 – $150</div>
+          <div class="pricing-label">Deep Dive</div>
+          <ul class="pricing-features">
+            <li>✓ Profile/content audit</li>
+            <li>✓ Custom strategy</li>
+            <li>✓ Session recording</li>
+            <li>✓ 48hr follow-up chat</li>
+            <li>✓ Action plan PDF</li>
+          </ul>
+          <button class="btn-primary" onclick="scrollToExperts()">Browse Experts</button>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-duration">60 min</div>
+          <div class="pricing-range">$100 – $300</div>
+          <div class="pricing-label">Full Strategy</div>
+          <ul class="pricing-features">
+            <li>✓ Complete content strategy</li>
+            <li>✓ Competitor analysis</li>
+            <li>✓ Session recording</li>
+            <li>✓ 7-day follow-up chat</li>
+            <li>✓ 30-day growth plan</li>
+          </ul>
+          <button class="btn-primary" onclick="scrollToExperts()">Browse Experts</button>
+        </div>
+      </div>
+
+      <p class="pricing-note">💳 Secure payments via Stripe. Money-back guarantee if the expert doesn't show up.</p>
+    </div>
+  </section>
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="cta-banner">
+    <div class="cta-orb cta-orb-1"></div>
+    <div class="cta-orb cta-orb-2"></div>
+    <div class="container cta-inner">
+      <h2>Ready to grow your social media?</h2>
+      <p>Join thousands of creators who've leveled up with a single conversation.</p>
+      <div class="cta-buttons">
+        <button class="btn-white" onclick="scrollToExperts()">Find an Expert</button>
+        <button class="btn-outline-white" onclick="openModal('expertModal')">Become an Expert</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+            <circle cx="14" cy="14" r="14" fill="url(#logoGrad2)"/>
+            <path d="M8 14c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="14" cy="17" r="2.5" fill="#fff"/>
+            <defs>
+              <linearGradient id="logoGrad2" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#7C3AED"/>
+                <stop offset="1" stop-color="#EC4899"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="logo-text">SocialPro</span>
+        </a>
+        <p>Book 1:1 video calls with the world's top social media experts.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Platform</h4>
+        <a href="#how-it-works">How it Works</a>
+        <a href="#categories">Browse Categories</a>
+        <a href="#experts">Find Experts</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Experts</h4>
+        <a href="#" onclick="openModal('expertModal')">Become an Expert</a>
+        <a href="#">Expert Guidelines</a>
+        <a href="#">Success Stories</a>
+        <a href="#">Expert Dashboard</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Blog</a>
+        <a href="#">Press</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+        <a href="#">Trust & Safety</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 SocialPro. All rights reserved.</p>
+        <p>Made with ❤️ for creators worldwide</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== BOOKING MODAL ===== -->
+  <div class="modal-overlay" id="bookingModal">
+    <div class="modal booking-modal">
+      <button class="modal-close" onclick="closeModal('bookingModal')">✕</button>
+      <div class="booking-header" id="bookingHeader">
+        <!-- Populated by JS -->
+      </div>
+      <div class="booking-steps">
+        <!-- Step 1: Choose duration -->
+        <div class="booking-step active" id="step1">
+          <h3>Choose session length</h3>
+          <div class="duration-options">
+            <div class="duration-option" onclick="selectDuration(15, this)">
+              <div class="dur-time">15 min</div>
+              <div class="dur-price" id="price15">Loading…</div>
+              <div class="dur-label">Quick Q&A</div>
+            </div>
+            <div class="duration-option featured" onclick="selectDuration(30, this)">
+              <div class="dur-badge">Popular</div>
+              <div class="dur-time">30 min</div>
+              <div class="dur-price" id="price30">Loading…</div>
+              <div class="dur-label">Deep Dive</div>
+            </div>
+            <div class="duration-option" onclick="selectDuration(60, this)">
+              <div class="dur-time">60 min</div>
+              <div class="dur-price" id="price60">Loading…</div>
+              <div class="dur-label">Full Strategy</div>
+            </div>
+          </div>
+          <button class="btn-primary full-width" onclick="nextBookingStep()">Continue</button>
+        </div>
+
+        <!-- Step 2: Choose time -->
+        <div class="booking-step" id="step2">
+          <button class="back-btn" onclick="prevBookingStep()">← Back</button>
+          <h3>Pick a date & time</h3>
+          <div class="calendar-mini" id="calendarMini">
+            <!-- Calendar generated by JS -->
+          </div>
+          <div class="time-slots" id="timeSlots">
+            <!-- Time slots generated by JS -->
+          </div>
+          <button class="btn-primary full-width" onclick="nextBookingStep()" id="confirmTimeBtn" disabled>Select a Time</button>
+        </div>
+
+        <!-- Step 3: Confirm & Pay -->
+        <div class="booking-step" id="step3">
+          <button class="back-btn" onclick="prevBookingStep()">← Back</button>
+          <h3>Confirm & Pay</h3>
+          <div class="booking-summary" id="bookingSummary">
+            <!-- Populated by JS -->
+          </div>
+          <div class="payment-form">
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" placeholder="Full name" />
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="you@example.com" />
+            </div>
+            <div class="form-group">
+              <label>What do you want to discuss?</label>
+              <textarea placeholder="Brief description of your goals…" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Card Number</label>
+              <div class="card-input">
+                <input type="text" placeholder="4242 4242 4242 4242" maxlength="19" />
+                <span class="card-icons">💳</span>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Expiry</label>
+                <input type="text" placeholder="MM/YY" maxlength="5" />
+              </div>
+              <div class="form-group">
+                <label>CVV</label>
+                <input type="text" placeholder="123" maxlength="3" />
+              </div>
+            </div>
+          </div>
+          <button class="btn-primary full-width" onclick="confirmBooking()">
+            <span id="payBtnText">Confirm & Pay</span>
+          </button>
+          <p class="secure-note">🔒 Secured by Stripe. 100% money-back guarantee.</p>
+        </div>
+
+        <!-- Step 4: Success -->
+        <div class="booking-step" id="step4">
+          <div class="booking-success">
+            <div class="success-icon">🎉</div>
+            <h3>Booking Confirmed!</h3>
+            <p>You'll receive a calendar invite and video link via email.</p>
+            <div class="success-details" id="successDetails"></div>
+            <button class="btn-primary" onclick="closeModal('bookingModal')">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LOGIN MODAL ===== -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal auth-modal">
+      <button class="modal-close" onclick="closeModal('loginModal')">✕</button>
+      <div class="auth-header">
+        <svg width="32" height="32" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="14" fill="url(#logoGrad3)"/>
+          <path d="M8 14c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="14" cy="17" r="2.5" fill="#fff"/>
+          <defs>
+            <linearGradient id="logoGrad3" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#7C3AED"/>
+              <stop offset="1" stop-color="#EC4899"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h2>Welcome back</h2>
+        <p>Sign in to your SocialPro account</p>
+      </div>
+      <div class="auth-social-btns">
+        <button class="btn-social">
+          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Continue with Google
+        </button>
+      </div>
+      <div class="auth-divider"><span>or</span></div>
+      <div class="auth-form">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" placeholder="••••••••" />
+        </div>
+        <a href="#" class="forgot-link">Forgot password?</a>
+        <button class="btn-primary full-width">Sign In</button>
+      </div>
+      <p class="auth-switch">Don't have an account? <a href="#" onclick="switchModal('loginModal','signupModal')">Sign up</a></p>
+    </div>
+  </div>
+
+  <!-- ===== SIGNUP MODAL ===== -->
+  <div class="modal-overlay" id="signupModal">
+    <div class="modal auth-modal">
+      <button class="modal-close" onclick="closeModal('signupModal')">✕</button>
+      <div class="auth-header">
+        <svg width="32" height="32" viewBox="0 0 28 28" fill="none">
+          <circle cx="14" cy="14" r="14" fill="url(#logoGrad4)"/>
+          <path d="M8 14c0-3.314 2.686-6 6-6s6 2.686 6 6" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="14" cy="17" r="2.5" fill="#fff"/>
+          <defs>
+            <linearGradient id="logoGrad4" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#7C3AED"/>
+              <stop offset="1" stop-color="#EC4899"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <h2>Create your account</h2>
+        <p>Start growing your social media today</p>
+      </div>
+      <div class="auth-social-btns">
+        <button class="btn-social">
+          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          Sign up with Google
+        </button>
+      </div>
+      <div class="auth-divider"><span>or</span></div>
+      <div class="auth-form">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Your name" />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" placeholder="Min 8 characters" />
+        </div>
+        <button class="btn-primary full-width">Create Account</button>
+      </div>
+      <p class="auth-switch">Already have an account? <a href="#" onclick="switchModal('signupModal','loginModal')">Sign in</a></p>
+      <p class="auth-terms">By signing up, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a></p>
+    </div>
+  </div>
+
+  <!-- ===== BECOME AN EXPERT MODAL ===== -->
+  <div class="modal-overlay" id="expertModal">
+    <div class="modal expert-apply-modal">
+      <button class="modal-close" onclick="closeModal('expertModal')">✕</button>
+      <div class="auth-header">
+        <div class="expert-apply-emoji">🌟</div>
+        <h2>Become an Expert</h2>
+        <p>Share your knowledge and earn money on your own schedule</p>
+      </div>
+      <div class="expert-perks">
+        <div class="perk">✓ Set your own rates and availability</div>
+        <div class="perk">✓ Keep 80% of every booking</div>
+        <div class="perk">✓ Build your personal brand</div>
+        <div class="perk">✓ Join 500+ verified experts</div>
+      </div>
+      <div class="auth-form">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" placeholder="Your name" />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label>Primary Platform</label>
+          <select>
+            <option>Instagram</option>
+            <option>TikTok</option>
+            <option>YouTube</option>
+            <option>LinkedIn</option>
+            <option>Twitter/X</option>
+            <option>Multiple Platforms</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Follower Count (primary platform)</label>
+          <select>
+            <option>10K – 50K</option>
+            <option>50K – 250K</option>
+            <option>250K – 1M</option>
+            <option>1M+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Profile / Portfolio Link</label>
+          <input type="url" placeholder="https://…" />
+        </div>
+        <button class="btn-primary full-width">Apply to Become an Expert</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== EXPERT PROFILE MODAL ===== -->
+  <div class="modal-overlay" id="profileModal">
+    <div class="modal profile-modal">
+      <button class="modal-close" onclick="closeModal('profileModal')">✕</button>
+      <div class="profile-content" id="profileContent">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

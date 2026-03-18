@@ -13,17 +13,8 @@
 //
 // =============================================
 
-const SUPABASE_URL     = 'YOUR_SUPABASE_URL';
-const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
-
-// Guard: don't crash if credentials haven't been filled in yet
-if (SUPABASE_URL === 'YOUR_SUPABASE_URL') {
-  console.warn(
-    '[SocialPro] Supabase credentials not set. ' +
-    'Open auth.js and replace SUPABASE_URL and SUPABASE_ANON_KEY ' +
-    'with your project values from https://supabase.com/dashboard.'
-  );
-}
+const SUPABASE_URL      = 'https://jetdghnyfrhxdstojnbx.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpldGRnaG55ZnJoeGRzdG9qbmJ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM4MDQ1ODYsImV4cCI6MjA4OTM4MDU4Nn0.cnf-K_oPTc_9Y9Rlrha5dnKe4yZnuHgyc_XNPjQRnOw';
 
 const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 

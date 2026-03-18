@@ -167,6 +167,74 @@ async function handleForgotPassword() {
 }
 
 // =============================================
+// Expert Application
+// =============================================
+
+// Open a modal only if the user is logged in; otherwise show login first
+function requireAuthThen(modalId) {
+  sb.auth.getSession().then(({ data: { session } }) => {
+    if (session) {
+      openModal(modalId);
+    } else {
+      openModal('loginModal');
+      showToast('Please sign in to apply as an expert.');
+    }
+  });
+}
+
+async function handleExpertApply() {
+  const { data: { session } } = await sb.auth.getSession();
+  if (!session) {
+    closeModal('expertModal');
+    openModal('loginModal');
+    return;
+  }
+
+  const name      = document.getElementById('expertName').value.trim();
+  const email     = document.getElementById('expertEmail').value.trim();
+  const platform  = document.getElementById('expertPlatform').value;
+  const followers = document.getElementById('expertFollowers').value;
+  const portfolio = document.getElementById('expertPortfolio').value.trim();
+  const errEl     = document.getElementById('expertError');
+  const btn       = document.getElementById('expertBtn');
+
+  clearAuthError(errEl);
+
+  if (!name || !email || !portfolio) {
+    return showAuthError(errEl, 'Please fill in all fields.');
+  }
+  if (!portfolio.startsWith('http')) {
+    return showAuthError(errEl, 'Please enter a valid URL starting with https://');
+  }
+
+  setLoading(btn, true);
+
+  const { error } = await sb.from('expert_applications').insert({
+    user_id:        session.user.id,
+    full_name:      name,
+    email:          email,
+    platform:       platform,
+    follower_range: followers,
+    portfolio_url:  portfolio,
+    status:         'pending',
+  });
+
+  setLoading(btn, false);
+
+  if (error) {
+    if (error.code === '23505') {
+      showAuthError(errEl, 'You have already submitted an application.');
+    } else {
+      showAuthError(errEl, 'Something went wrong. Please try again.');
+      console.error(error);
+    }
+  } else {
+    closeModal('expertModal');
+    showToast('Application submitted! We will review it and get back to you.');
+  }
+}
+
+// =============================================
 // Helpers
 // =============================================
 
